@@ -1,4 +1,7 @@
 ﻿//#define CONSOLE_SETTINGS
+//#define CLASS_WORK
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,23 +58,63 @@ namespace Introduction
 #endif
 
 
+#if CLASS_WORK
             Console.Write("Введите ваше имя:");
             string first_name = Console.ReadLine();
 
             Console.Write("Введите вашу фамилию: ");
-            string last_name = Console.ReadLine(); 
+            string last_name = Console.ReadLine();
 
             Console.Write("Введите ваш возраст: ");
-            int age=Convert.ToInt32(Console.ReadLine());  //convert отвечает за преобразование типов
+            int age = Convert.ToInt32(Console.ReadLine());  //convert отвечает за преобразование типов
             //1)конкатенация строк
-            Console.WriteLine("Имя: "+first_name+", фамилия: "+last_name+", возраст: "+age+" лет");
+            Console.WriteLine("Имя: " + first_name + ", фамилия: " + last_name + ", возраст: " + age + " лет");
 
             //2) Форматирование строк:
-            Console.WriteLine(string.Format("Имя: {0}, фамилия: {1}, возраст: {2} лет", first_name,last_name,age));//функция с произвольным набором параметров
+            Console.WriteLine(string.Format("Имя: {0}, фамилия: {1}, возраст: {2} лет", first_name, last_name, age));//функция с произвольным набором параметров
 
-           // 3) Интерполяция строк:
-           Console.WriteLine($"Имя: {first_name}, фамилия: {last_name}, возраст: {age} лет");
-           Console.WriteLine($"Имя: {{first_name}}, фамилия: {{{last_name}}}, возраст: {age} лет");
+            // 3) Интерполяция строк:
+            Console.WriteLine($"Имя: {first_name}, фамилия: {last_name}, возраст: {age} лет");
+            Console.WriteLine($"Имя: {{first_name}}, фамилия: {{{last_name}}}, возраст: {age} лет"); 
+#endif
+
+            Console.WriteLine("Для выхода наберите 'e'\n");
+            Console.WriteLine("Для для движения вперед 'w'\n");
+            Console.WriteLine("Для для движения назад 's'\n");
+            Console.WriteLine("Для для движения влево 'a'\n");
+            Console.WriteLine("Для для движения вправо 'd'\n");
+            Console.WriteLine("нажмите клавишу: ");
+            char key;
+            do
+            {
+                key=Console.ReadLine()[0];
+                //Console.WriteLine("Для выхода наберите 'e'\n");
+                //Console.WriteLine("Для для движения вперед 'w'\n");
+                //Console.WriteLine("Для для движения назад 's'\n");
+                //Console.WriteLine("Для для движения влево 'a'\n");
+                //Console.WriteLine("Для для движения вправо 'd'\n");
+                //Console.WriteLine("нажмите клавишу: ");
+               
+                switch (key)
+                { 
+                    case 'w':case 'W':
+                        Console.WriteLine("вперед");
+                        break;
+                    case 's':case 'S':
+                        Console.WriteLine("назад");
+                        break;
+                    case 'a':case 'A':
+                        Console.WriteLine("влево");
+                        break;
+                    case 'd': case'D':
+                        Console.WriteLine("вправо");
+                        break;
+                    default: Console.WriteLine("Error key");
+                        break;
+                }
+               
+            }
+            while (key != 'e');
         }
     }
 }

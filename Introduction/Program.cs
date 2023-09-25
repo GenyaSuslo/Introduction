@@ -1,6 +1,6 @@
 ﻿//#define CONSOLE_SETTINGS
 //#define CLASS_WORK
-
+//#define HOME_WORK
 
 using System;
 using System.Collections.Generic;
@@ -78,6 +78,7 @@ namespace Introduction
             Console.WriteLine($"Имя: {{first_name}}, фамилия: {{{last_name}}}, возраст: {age} лет"); 
 #endif
 
+#if HOME_WORK
             Console.WriteLine("Для выхода наберите 'e'\n");
             Console.WriteLine("Для для движения вперед 'w'\n");
             Console.WriteLine("Для для движения назад 's'\n");
@@ -87,34 +88,42 @@ namespace Introduction
             char key;
             do
             {
-                key=Console.ReadLine()[0];
+                key = Console.ReadLine()[0];
                 //Console.WriteLine("Для выхода наберите 'e'\n");
                 //Console.WriteLine("Для для движения вперед 'w'\n");
                 //Console.WriteLine("Для для движения назад 's'\n");
                 //Console.WriteLine("Для для движения влево 'a'\n");
                 //Console.WriteLine("Для для движения вправо 'd'\n");
                 //Console.WriteLine("нажмите клавишу: ");
-               
+
                 switch (key)
-                { 
-                    case 'w':case 'W':
+                {
+                    case 'w':
+                    case 'W':
                         Console.WriteLine("вперед");
                         break;
-                    case 's':case 'S':
+                    case 's':
+                    case 'S':
                         Console.WriteLine("назад");
                         break;
-                    case 'a':case 'A':
+                    case 'a':
+                    case 'A':
                         Console.WriteLine("влево");
                         break;
-                    case 'd': case'D':
+                    case 'd':
+                    case 'D':
                         Console.WriteLine("вправо");
                         break;
-                    default: Console.WriteLine("Error key");
+                    default:
+                        Console.WriteLine("Error key");
                         break;
                 }
-               
+
             }
-            while (key != 'e');
+            while (key != 'e'); 
+#endif
+
+
         }
     }
 }

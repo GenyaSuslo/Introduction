@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduction", "Introductio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{EFAE9634-2FF7-4218-80A9-60EF0A3878AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Home_work_Data_types", "Home_work_Data_types\Home_work_Data_types.csproj", "{2A85E53B-E9F7-4137-9A92-1DF6CC29112F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EFAE9634-2FF7-4218-80A9-60EF0A3878AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFAE9634-2FF7-4218-80A9-60EF0A3878AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFAE9634-2FF7-4218-80A9-60EF0A3878AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A85E53B-E9F7-4137-9A92-1DF6CC29112F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A85E53B-E9F7-4137-9A92-1DF6CC29112F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A85E53B-E9F7-4137-9A92-1DF6CC29112F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A85E53B-E9F7-4137-9A92-1DF6CC29112F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

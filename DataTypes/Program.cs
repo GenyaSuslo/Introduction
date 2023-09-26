@@ -1,7 +1,7 @@
 ﻿//#define LOGICAL_TYPES
 //#define CHARACTER_TYPES
 //#define INTEGRAL_TYPES
-#define FLOATING_TYPES
+//#define FLOATING_TYPES
 using System;
 using System.Collections.Generic;
 using System.Linq;

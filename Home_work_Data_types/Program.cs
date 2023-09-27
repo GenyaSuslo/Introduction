@@ -1,4 +1,4 @@
-﻿#define CONVERT
+﻿//#define CONVERT
 //#define PRICE
 //#define PRICE_2
 //#define DISTANCE_PRICE
@@ -63,12 +63,23 @@ namespace Home_work_Data_types
             Console.WriteLine("Поездка на дачу и обратно обойдется: " + (2 * distance/100 * expenses * price) + " грн."); 
 #endif
 
-
-
-
-
-
-
+            //КАЛЬКУЛЯТОР
+            Console.Write("Введите арифметическое выражение: ");
+            string expression = Console.ReadLine();
+           // Console.WriteLine(expression);
+            string[] operands = expression.Split('+', '-', '*', '/' );//режет строку на массивы в зависимости от знаков
+                                                                      //и колличества их повторений в изначальной строке
+            //for (int i = 0; i < operands.Length;i++)
+            //{
+            //    Console.WriteLine(operands[i]);
+            //}
+            double a = Convert.ToDouble(operands[0]);
+            double b = Convert.ToDouble(operands[1]);
+            if (expression.Contains('+')) Console.WriteLine($"{a}+{b} = {a + b}");
+            else if (expression.Contains('-')) Console.WriteLine($"{a}-{b} = {a - b}");
+            else if (expression.Contains('*')) Console.WriteLine($"{a}*{b} = {a * b}");
+            else if (expression.Contains('/')) Console.WriteLine($"{a}/{b} = {a / b}");
+            else Console.WriteLine("Error: No operation");
 
         }
     }

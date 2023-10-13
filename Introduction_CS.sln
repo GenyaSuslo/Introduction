@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerations", "Enumeration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferParameters", "TransferParameters\TransferParameters.csproj", "{99979185-D1E6-4D6E-9BA9-4589786AE8DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraction CS", "Fraction CS\Fraction CS.csproj", "{480712AA-A2FE-420B-A5B6-B7DFAB9D2D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{99979185-D1E6-4D6E-9BA9-4589786AE8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99979185-D1E6-4D6E-9BA9-4589786AE8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99979185-D1E6-4D6E-9BA9-4589786AE8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{480712AA-A2FE-420B-A5B6-B7DFAB9D2D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{480712AA-A2FE-420B-A5B6-B7DFAB9D2D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{480712AA-A2FE-420B-A5B6-B7DFAB9D2D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{480712AA-A2FE-420B-A5B6-B7DFAB9D2D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Fraction_CS
 {
     internal class Fraction_CS
@@ -13,7 +14,7 @@ namespace Fraction_CS
         int denominator;
         public int Integer
         {
-            get ;
+            get ;//это автосвойства, позволяет работать в main как с обычными переменными
             set ;
         }
         public int Numerator
@@ -91,7 +92,54 @@ namespace Fraction_CS
             Denominator = denominator;
             Console.WriteLine($"Constructor:\t\t{this.GetHashCode()}");
         }
+        public Fraction_CS(Fraction_CS other)
+        {
+            this.Integer = other.Integer;
+            this.Numerator = other.Numerator;
+            this.Denominator = other.Denominator;
+            Console.WriteLine($"CopyConstructor:\t {this.GetHashCode()}");
+
+        }
+        ////                Operators:
+        public static Fraction_CS operator *( Fraction_CS left, Fraction_CS right)//static можем вызываться для всего класса, не static вызывается для объекта
+        {
+            Fraction_CS left_copy = new Fraction_CS(left);
+            Fraction_CS right_copy = new Fraction_CS(right);
+            left_copy.toImproper();
+            right_copy.toImproper();
+            return new Fraction_CS(left_copy.Numerator * right_copy.Numerator, left_copy.Denominator * right_copy.Denominator).toProper();
+        }
+        public static Fraction_CS operator/(Fraction_CS left, Fraction_CS right)
+        {
+            return left * right.Inverted();
+        }
+
+
         ////                Methods:
+        public Fraction_CS toProper()
+        {
+            Integer += Numerator / Denominator;
+            Numerator %= Denominator;
+            return this;
+        }
+        public Fraction_CS toImproper()
+        {
+            Numerator += Integer * Denominator;
+            Integer = 0;
+            return this;
+        }
+        public Fraction_CS Inverted()
+        {
+            Fraction_CS inverted = new Fraction_CS(this);
+            inverted.toImproper();
+            (inverted.Numerator, inverted.Denominator) = (inverted.Denominator, inverted.Numerator);//работает в новой версии студии 7+
+            //int buffer = inverted.Numerator;
+            //inverted.Numerator = inverted.Denominator; //по старинке
+            //inverted.Denominator = buffer;
+            return inverted;
+
+        }
+
         public void Print()
         { 
         if(Integer!=0) Console.Write(Integer);//все записи исправлены на свойства
@@ -110,11 +158,11 @@ namespace Fraction_CS
             if (Integer != 0) output+=Integer.ToString();//все переменные заменены на свойства
             if (Numerator != 0)
             {
-                if (Integer != 0) output+="(";
-                output+=$"{Numerator}/{Denominator}";
-                if (Integer != 0) output+=")";
+                if (Integer != 0) output += "(";
+                output += $"{Numerator}/{Denominator}";
+                if (Integer != 0) output += ")";
             }
-            else if (Integer == 0) Console.Write(0);
+            else if (Integer == 0) output = "0";
             Console.WriteLine();
             return output;
         }
